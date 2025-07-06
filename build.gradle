@@ -17,6 +17,8 @@ dependencies {
     testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.27.3'
     jmh group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.37'
     jmhAnnotationProcessor group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version: '1.37'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.17'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.18'
 }
 
 test {
