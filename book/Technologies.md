@@ -64,3 +64,6 @@ RETURNING *;
 Isolation level: **Read Committed** enough.
 Semantic: **at-most-once**. Need some watchdog to make it **at-least-once**.
 
+## Ignite
+
+SQL ORDER BY loads all data to memory.
