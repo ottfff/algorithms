@@ -148,3 +148,31 @@
 | `Kotlin: Array<T>`   | ❌ No                       | ❌ No           | Invariant, like `List<T>` in Java                                     |
 | `Kotlin: List<out T>`| ✅ Yes                      | ❌ No           | Covariant (like `? extends`), read-only                              |
 | `Kotlin: List<in T>` | ❌ No                       | ✅ Yes          | Contravariant (like `? super`), usually for consumers                |
+
+
+## Binary operations
+
+| Operator Symbol | Name                    | Description                                      | Precedence | Associativity  |
+|-----------------|-------------------------|--------------------------------------------------|------------|----------------|
+| *               | Multiplication          | Multiplies two numbers                          | High       | Left-to-right  |
+| /               | Division                | Divides left operand by right                   | High       | Left-to-right  |
+| %               | Modulus (Remainder)     | Remainder of division                           | High       | Left-to-right  |
+| +               | Addition                | Adds two values                                 | Medium     | Left-to-right  |
+| -               | Subtraction             | Subtracts right operand from left               | Medium     | Left-to-right  |
+| <<              | Left Shift              | Shifts bits left (fills with zeros)             | Low        | Left-to-right  |
+| >>              | Signed Right Shift      | Shifts bits right (preserves sign bit)          | Low        | Left-to-right  |
+| >>>             | Unsigned Right Shift    | Shifts bits right (fills with zeros)            | Low        | Left-to-right  |
+| &               | Bitwise AND             | Performs bitwise AND                            | Lower      | Left-to-right  |
+| ^               | Bitwise XOR             | Performs bitwise exclusive OR                   | Lower      | Left-to-right  |
+| \|              | Bitwise OR              | Performs bitwise inclusive OR                   | Lower      | Left-to-right  |
+| ==              | Equal to                | Checks if values are equal                      | Lower      | Left-to-right  |
+| !=              | Not equal to            | Checks if values are not equal                  | Lower      | Left-to-right  |
+| <               | Less than               | Checks if left is less than right               | Lower      | Left-to-right  |
+| <=              | Less than or equal to   | Checks if left is less than or equal to right  | Lower      | Left-to-right  |
+| >               | Greater than            | Checks if left is greater than right            | Lower      | Left-to-right  |
+| >=              | Greater than or equal to| Checks if left is greater than or equal         | Lower      | Left-to-right  |
+| &&              | Logical AND             | True if both operands are true                  | Very Low   | Left-to-right  |
+| \|\|            | Logical OR              | True if at least one operand is true            | Very Low   | Left-to-right  |
+| =               | Assignment              | Assigns right to left                           | Lowest     | Right-to-left  |
+| +=, -=, etc.    | Compound Assignment     | Shorthand for operation and assignment          | Lowest     | Right-to-left  |
+
