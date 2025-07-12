@@ -152,27 +152,31 @@
 
 ## Binary operations
 
-| Operator Symbol | Name                    | Description                                      | Precedence | Associativity  |
-|-----------------|-------------------------|--------------------------------------------------|------------|----------------|
-| *               | Multiplication          | Multiplies two numbers                          | High       | Left-to-right  |
-| /               | Division                | Divides left operand by right                   | High       | Left-to-right  |
-| %               | Modulus (Remainder)     | Remainder of division                           | High       | Left-to-right  |
-| +               | Addition                | Adds two values                                 | Medium     | Left-to-right  |
-| -               | Subtraction             | Subtracts right operand from left               | Medium     | Left-to-right  |
-| <<              | Left Shift              | Shifts bits left (fills with zeros)             | Low        | Left-to-right  |
-| >>              | Signed Right Shift      | Shifts bits right (preserves sign bit)          | Low        | Left-to-right  |
-| >>>             | Unsigned Right Shift    | Shifts bits right (fills with zeros)            | Low        | Left-to-right  |
-| &               | Bitwise AND             | Performs bitwise AND                            | Lower      | Left-to-right  |
-| ^               | Bitwise XOR             | Performs bitwise exclusive OR                   | Lower      | Left-to-right  |
-| \|              | Bitwise OR              | Performs bitwise inclusive OR                   | Lower      | Left-to-right  |
-| ==              | Equal to                | Checks if values are equal                      | Lower      | Left-to-right  |
-| !=              | Not equal to            | Checks if values are not equal                  | Lower      | Left-to-right  |
-| <               | Less than               | Checks if left is less than right               | Lower      | Left-to-right  |
-| <=              | Less than or equal to   | Checks if left is less than or equal to right  | Lower      | Left-to-right  |
-| >               | Greater than            | Checks if left is greater than right            | Lower      | Left-to-right  |
-| >=              | Greater than or equal to| Checks if left is greater than or equal         | Lower      | Left-to-right  |
-| &&              | Logical AND             | True if both operands are true                  | Very Low   | Left-to-right  |
-| \|\|            | Logical OR              | True if at least one operand is true            | Very Low   | Left-to-right  |
-| =               | Assignment              | Assigns right to left                           | Lowest     | Right-to-left  |
-| +=, -=, etc.    | Compound Assignment     | Shorthand for operation and assignment          | Lowest     | Right-to-left  |
+| Operator Symbol | Name                    | Description                                      | Example                          | Result         |
+|-----------------|-------------------------|--------------------------------------------------|----------------------------------|----------------|
+| *               | Multiplication          | Multiplies two numbers                          | `5 * 3`                          | `15`           |
+| /               | Division                | Divides left operand by right                   | `10 / 2`                         | `5`            |
+| %               | Modulus (Remainder)     | Remainder of division                           | `10 % 3`                         | `1`            |
+| +               | Addition                | Adds two values                                 | `7 + 2`                          | `9`            |
+| -               | Subtraction             | Subtracts right from left                       | `7 - 5`                          | `2`            |
+| <<              | Left Shift              | Shifts bits left (fills with zeros)             | `5 << 1`                         | `10`           |
+| >>              | Signed Right Shift      | Shifts bits right (preserves sign)              | `-8 >> 2`                        | `-2`           |
+| >>>             | Unsigned Right Shift    | Shifts bits right (fills with zeros)            | `-8 >>> 2`                       | `1073741822`   |
+| &               | Bitwise AND             | Performs AND on bits                            | `5 & 3`                          | `1`            |
+| ^               | Bitwise XOR             | Performs XOR on bits                            | `5 ^ 3`                          | `6`            |
+| \|              | Bitwise OR              | Performs OR on bits                             | `5 | 3`                          | `7`            |
+| ==              | Equal to                | True if equal                                   | `5 == 5`                         | `true`         |
+| !=              | Not equal to            | True if not equal                               | `5 != 3`                         | `true`         |
+| <               | Less than               | True if left is less than right                 | `3 < 5`                          | `true`         |
+| <=              | Less than or equal to   | True if left ≤ right                            | `5 <= 5`                         | `true`         |
+| >               | Greater than            | True if left > right                            | `7 > 4`                          | `true`         |
+| >=              | Greater than or equal   | True if left ≥ right                            | `5 >= 6`                         | `false`        |
+| &&              | Logical AND             | True if both operands are true                  | `(5 > 3) && (4 > 2)`             | `true`         |
+| \|\|            | Logical OR              | True if at least one is true                    | `(5 > 3) || (4 < 2)`             | `true`         |
+| =               | Assignment              | Assigns value                                   | `int x = 5`                      | `x = 5`        |
+| +=              | Add and assign          | Shorthand for `x = x + 2`                       | `x += 2`                         | `x = 7`        |
+| -=              | Subtract and assign     | Shorthand for `x = x - 1`                       | `x -= 1`                         | `x = 6`        |
+| *=              | Multiply and assign     | Shorthand for `x = x * 3`                       | `x *= 3`                         | `x = 18`       |
+| /=              | Divide and assign       | Shorthand for `x = x / 2`                       | `x /= 2`                         | `x = 9`        |
+| %=              | Modulus and assign      | Shorthand for `x = x % 4`                       | `x %= 4`                         | `x = 1`        |
 
