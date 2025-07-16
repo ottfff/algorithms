@@ -102,3 +102,6 @@ Readers may block writers.
 Writers may block readers.   
 PostgreSQL avoids this with MVCC, unless you explicitly take locks (e.g. with SELECT FOR UPDATE).
 
+## Ignite
+
+SQL ORDER BY loads all data to memory.
