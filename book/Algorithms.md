@@ -22,9 +22,24 @@ Timsort evaluates int minrun. Minrun is size of sorted subarrays ([32, 64]).
 
 Any Stream.sort or Collections.sort comes down to Arrays.sort.
 
-### Segment Tree
+## Segment Tree
+
+
 
 [Booking concert tickets](https://leetcode.com/problems/booking-concert-tickets-in-groups/)
+
+## Red-Black Tree
+
+Search/Insert/Delete `O(log(n))`    
+Max depth ≤ `2 * log₂(n + 1)`
+
+- Every node is either red or black.
+- All **null** nodes are considered **black**. **Root** usually also considered **black**.
+- A **red** node does **not** have a **red child**.
+- **Black path** always **constant** for all paths from root to any leaf.
+- (Conclusion) If a node N has exactly **one child, the child must be red**. If the child were black, its leaves would sit at a different black depth than N's null node (which is considered black by rule 2), violating requirement 4.
+
+
 
 ## LeetCode problems
 
@@ -181,15 +196,4 @@ Any Stream.sort or Collections.sort comes down to Arrays.sort.
 | Math & Geometry         | [Multiply Strings](https://leetcode.com/problems/multiply-strings)                                                                                   | Medium     |                                                                                          |
 | Math & Geometry         | [Detect Squares](https://leetcode.com/problems/detect-squares)                                                                                       | Medium     |                                                                                          |
 
-
-## Red-Black Tree
-
-Search/Insert/Delete `O(log(n))`    
-Max depth ≤ `2 * log₂(n + 1)`
-
-- Every node is either red or black.
-- All **null** nodes are considered **black**. **Root** usually also considered **black**.
-- A **red** node does **not** have a **red child**.
-- **Black path** always **constant** for all paths from root to any leaf.
-- (Conclusion) If a node N has exactly **one child, the child must be red**. If the child were black, its leaves would sit at a different black depth than N's null node (which is considered black by rule 2), violating requirement 4.
 

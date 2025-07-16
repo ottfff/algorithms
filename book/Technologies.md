@@ -64,3 +64,41 @@ RETURNING *;
 Isolation level: **Read Committed** enough.
 Semantic: **at-most-once**. Need some watchdog to make it **at-least-once**.
 
+## Transactions and Isolation Levels
+
+**ACID**: Atomicity, Consistency, Isolation, Durability
+
+| Isolation Level     | Dirty Read | Non-Repeatable Read | Phantom Read |
+|---------------------|------------|----------------------|---------------|
+| Read Uncommitted    | ❌         | ❌                   | ❌            |
+| Read Committed      | ✅         | ❌                   | ❌            |
+| Repeatable Read     | ✅         | ✅                   | ❌            |
+| Serializable        | ✅         | ✅                   | ✅            |
+
+| Problem               | Description                                                                                |
+|-----------------------|--------------------------------------------------------------------------------------------|
+| **Dirty Read**        | Reading data that was written by a transaction that is not yet committed                   |
+| **Non-Repeatable Read** | Reading the same row twice gives different results due to another commit |
+| **Phantom Read**      | Re-running a query returns new rows due to another insert/update during txn.               |
+
+| Database       | Default Isolation Level     |
+|----------------|-----------------------------|
+| PostgreSQL     | Read Committed              |
+| MySQL (InnoDB) | Repeatable Read             |
+| Oracle         | Read Committed              |
+| SQL Server     | Read Committed              |
+| SQLite         | Serializable (but relaxed)  |
+
+In some databases like **Oracle** and **PostgreSQL**, READ COMMITTED and higher isolation levels are implemented using **MVCC** (Multi-Version Concurrency Control) rather than locks.  
+This means:   
+* Readers don’t block writers
+* Writers don’t block readers
+
+Each transaction sees a snapshot of the data at a point in time
+
+#### Difference from lock-based isolation (e.g. SQL Server default)
+SQL Server (without Snapshot Isolation) uses locks to implement isolation.   
+Readers may block writers.   
+Writers may block readers.   
+PostgreSQL avoids this with MVCC, unless you explicitly take locks (e.g. with SELECT FOR UPDATE).
+
