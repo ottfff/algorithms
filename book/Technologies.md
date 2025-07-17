@@ -105,3 +105,32 @@ PostgreSQL avoids this with MVCC, unless you explicitly take locks (e.g. with SE
 ## Ignite
 
 SQL ORDER BY loads all data to memory.
+
+## Databases
+
+| Command           | Executes the query? | Shows real runtime data? | Purpose                    |
+| ----------------- | ------------------- | ------------------------ | -------------------------- |
+| `EXPLAIN`         | ❌ No                | ❌ No                     | Estimate query plan        |
+| `EXPLAIN ANALYZE` | ✅ Yes               | ✅ Yes                    | Measure actual performance |
+
+### Types of Locks in Databases
+
+| Level                   | Description                                                                  |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| **Row-level lock**      | Locks individual rows; allows other transactions to work with different rows |
+| **Page-level lock**     | Locks a page of data (less common)                                           |
+| **Table-level lock**    | Locks the entire table                                                       |
+| **Database-level lock** | Locks the entire database (used for maintenance)                             |
+
+| Lock Type         | Description                                                                                              |
+| ----------------- | -------------------------------------------------------------------------------------------------------- |
+| **Shared (S)**    | Allows others to read but **not write**; multiple readers allowed simultaneously                         |
+| **Exclusive (X)** | Prevents **both read and write** by other transactions                                                   |
+| **Intent locks**  | Indicate intention to acquire a more specific lock (e.g., row inside a table) — helps ensure consistency |
+| **Update lock**   | Used to prevent deadlocks when a row might be updated (e.g., in SQL Server)                              |
+
+| Category              | Example                                                           |
+| --------------------- | ----------------------------------------------------------------- |
+| **Short-term locks**  | Exist only during execution of a single SQL query                 |
+| **Transaction locks** | Last for the entire transaction (`BEGIN` ... `COMMIT`/`ROLLBACK`) |
+| **Manual locks**      | Explicitly set, e.g. `LOCK TABLE`                                 |
